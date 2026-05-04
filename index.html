@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>남상도 ｜ Full-stack Developer (Backend 지원) Portfolio</title>
+<meta name="description" content="남상도 풀스택 개발자 포트폴리오 — Spring Boot · Next.js · Flutter · AI 통합. 백엔드 지원에서 클라이언트 영향까지 함께 보는 API 설계자." />
+<meta name="author" content="남상도" />
+<meta property="og:title" content="남상도 ｜ Full-stack Developer · Backend 지원 Portfolio" />
+<meta property="og:description" content="Spring Boot 백엔드 + Next.js·React·Flutter 프론트까지 — 트러블슈팅으로 검증된 풀스택 개발자" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <span class="nav__brand-logo">N</span>
+      <span class="nav__brand-name">남상도 <span class="nav__brand-en">/ Namsangdo</span></span>
+    </a>
+    <nav class="nav__links" aria-label="primary">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#troubleshooting">Trouble&shy;shooting</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--ghost" href="https://github.com/no1fc" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</header>
+
+<!-- ─── HERO ────────────────────────────────────────── -->
+<section id="top" class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__inner">
+    <p class="hero__eyebrow">Full-stack Developer · Spring · Next.js · Flutter · AI · Backend 지원</p>
+    <h1 class="hero__title">
+      백엔드부터 프론트엔드까지 직접 짜며,<br />
+      <span class="hero__title-accent">클라이언트 영향까지 보는</span> 백엔드 개발자.
+    </h1>
+    <p class="hero__lead">
+      Spring Boot 백엔드와 Next.js 그리고 Flutter 프론트까지 한 사람이 끝까지 짜 본 풀스택 개발자입니다.
+      <br class="only-desktop" />
+      외부 의존성과 동시성 그리고 실시간성 문제를 끝까지 파고드는 트러블슈팅으로 해결합니다.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#projects">프로젝트 보기 →</a>
+      <a class="btn btn--ghost" href="#troubleshooting">트러블슈팅 사례</a>
+      <a class="btn btn--ghost" href="포트폴리오_남상도.pdf" download>PDF 다운로드 ↓</a>
+    </div>
+    <ul class="hero__metrics" aria-label="key-metrics">
+      <li><span class="metric__num">3</span><span class="metric__label">대 도메인 모듈 분리</span></li>
+      <li><span class="metric__num">100<small>%</small></span><span class="metric__label">Gemini 중복 호출 차단</span></li>
+      <li><span class="metric__num">N→0</span><span class="metric__label">알림 폴링 부하</span></li>
+      <li><span class="metric__num">B+F</span><span class="metric__label">백엔드+프론트 직접</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─── ABOUT ───────────────────────────────────────── -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__kicker">01 · About</span>
+      <h2 class="section__title">한 줄의 코드가 운영 현장에 닿는 순간</h2>
+    </div>
+    <div class="about-grid">
+      <article class="about__card">
+        <h3>운영을 책임지는 풀스택</h3>
+        <p>잡모아 운영 시스템에서 Spring Boot 백엔드와 Next.js 화면 그리고 Flutter 사내 앱까지 한 사람이 끝까지 짜고 운영합니다. 같은 도메인을 양쪽에서 보기 때문에 변경의 끝단 영향이 머리에 들어옵니다.</p>
+      </article>
+      <article class="about__card">
+        <h3>클라이언트 영향까지 보는 백엔드</h3>
+        <p>API를 설계할 때 응답 스키마가 화면에서 어떻게 보이는지 WebSocket 메시지가 클라이언트 상태와 어떻게 동기화되는지를 함께 시뮬레이션합니다. STOMP destination 네이밍도 후속 알림 추가의 프론트 비용까지 함께 보고 결정합니다.</p>
+      </article>
+      <article class="about__card">
+        <h3>트러블슈팅으로 검증된 문제해결력</h3>
+        <p>다중 상담사 동시 요청 시 Gemini API 중복 호출을 ConcurrencyManager로 단독 해결했습니다. 알림 폴링 부하는 STOMP/SockJS와 Redis pub/sub 결합으로 제거하고 다중 인스턴스 동기화까지 확보했습니다.</p>
+      </article>
+      <article class="about__card">
+        <h3>AI를 만드는 개발자</h3>
+        <p>Claude와 Claude Code 그리고 MCP를 단순 사용을 넘어 직접 사내 도구와 오픈소스로 만들어 봤습니다. 채용공고 자동화 chatJobmoa와 자가진단 챗봇 NESS 그리고 자기소개서·포트폴리오 자동화 kr-resume-skill을 만들었고 1인 개발자로서 사내에 kr-resume-skill을 공유하고 AI 활용 교육 세션도 직접 진행했습니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ──────────────────────────────────────── -->
+<section id="skills" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__kicker">02 · Skills</span>
+      <h2 class="section__title">Tech Stack</h2>
+      <p class="section__lead">실무 운영에 직접 사용한 주력 기술과, 사이드 프로젝트로 다뤄본 보조 기술을 분리해 표기.</p>
+    </div>
+
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Backend <span class="badge badge--primary">주력</span></h3>
+        <ul>
+          <li>Java 17</li><li>Spring Boot 3.4.1</li><li>Spring MVC</li>
+          <li>MyBatis 3.5.6</li><li>Spring AOP</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frontend <span class="badge badge--primary">실무 운영</span></h3>
+        <ul>
+          <li>Next.js 16 (App Router)</li><li>React 19</li><li>TypeScript</li>
+          <li>Tailwind CSS 4</li><li>Framer Motion</li><li>JSP</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Mobile</h3>
+        <ul>
+          <li>Flutter</li><li>Dart</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Datastore</h3>
+        <ul>
+          <li>MSSQL Server (T-SQL)</li><li>Redis (Jedis 5.2.0)</li><li>SQLite</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Realtime / Async</h3>
+        <ul>
+          <li>Spring WebSocket</li><li>STOMP / SockJS</li><li>Redis pub/sub</li><li>OkHttp</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>AI Integration <span class="badge">차별점</span></h3>
+        <ul>
+          <li>Google Gemini API</li><li>Anthropic Claude API</li>
+          <li>Prompt Engineering</li><li>Claude Code Skills · MCP</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Secondary</h3>
+        <ul>
+          <li>NestJS</li><li>Node.js</li><li>Python</li><li>C#</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Infra / DevOps</h3>
+        <ul>
+          <li>Maven (WAR)</li><li>Ubuntu/Nginx/PM2</li><li>Git / GitHub</li><li>Apache POI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ────────────────────────────────────── -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__kicker">03 · Projects</span>
+      <h2 class="section__title">대표 프로젝트 — 아키텍처와 함께</h2>
+      <p class="section__lead">실 운영 프로젝트를 중심으로, 아키텍처와 핵심 의사결정을 함께 설명합니다.</p>
+    </div>
+
+    <!-- Project 1 : ParticipantManagement -->
+    <article class="project" id="proj-pm">
+      <header class="project__head">
+        <div>
+          <span class="project__index">P1</span>
+          <h3 class="project__title">잡모아 국민취업지원제도 참여자 관리 시스템</h3>
+          <p class="project__sub">Spring Boot · MyBatis · MSSQL · Redis · WebSocket — 실 운영 백엔드</p>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="https://github.com/no1fc/ParticipantManagement" target="_blank" rel="noopener">GitHub ↗</a>
+      </header>
+
+      <div class="project__meta">
+        <span><b>조직</b> (주)잡모아 / 고용노동부 위탁</span>
+        <span><b>역할</b> 백엔드 개발 · 도메인 모델링</span>
+        <span><b>팀</b> 백엔드 다인 협업 (담당: 도메인 1축, AI 통합, 실시간 알림)</span>
+      </div>
+
+      <div class="project__stack">
+        <span>Java 17</span><span>Spring Boot 3.4.1</span><span>Spring MVC</span>
+        <span>MyBatis 3.5.6</span><span>MSSQL</span><span>Redis · Jedis 5.2.0</span>
+        <span>WebSocket / STOMP / SockJS</span><span>Maven (WAR)</span>
+      </div>
+
+      <p class="project__desc">
+        고용노동부 국민취업지원제도 위탁 운영을 위한 통합 관리 시스템입니다.
+        세 도메인 모듈(상담관리와 취업알선 그리고 채용정보)로 책임을 분리해 설계했고
+        AOP 트랜잭션 분리(<code>select*</code> 읽기전용과 <code>PROPAGATION_REQUIRED</code>)로 운영 데이터 무결성을 확보했습니다.
+      </p>
+
+      <div class="project__diagram">
+        <h4 class="project__diagram-title">📐 시스템 아키텍처</h4>
+        <pre class="mermaid">
+flowchart LR
+  Client[Browser] -->|Login Session| LI[LoginInterceptor]
+  LI --> CTRL[Controller Layer]
+  CTRL --> SVC[Service / *Impl]
+  SVC --> DAO[DAO + SqlSessionTemplate]
+  DAO --> MB[MyBatis XML Mappers x15]
+  MB --> DB[(MSSQL Server)]
+
+  SVC -. AOP Tx .-> AOP{{TxAdvisor: select* readonly / else REQUIRED}}
+  SVC -- Cache --> RC[(Redis · Jedis)]
+  SVC -- Realtime --> WS[STOMP /ws-notification]
+  WS -- pub/sub --> RPS[(Redis pub/sub)]
+  SVC -- AI --> GAS[GeminiApiService]
+  GAS --> CMG{{RecommendConcurrencyManager}}
+  GAS --> Gemini[(Google Gemini API)]
+
+  subgraph DomainModules
+    M1[CounselMain<br/>상담·교육·취업·AI]
+    M2[jobPlacement<br/>비동기 REST · WS]
+    M3[recruitmentFormation<br/>채용 스케줄 동기화]
+  end
+  CTRL --> M1 & M2 & M3
+        </pre>
+      </div>
+
+      <div class="project__highlights">
+        <h4>핵심 의사결정</h4>
+        <ul>
+          <li>세 모듈 분리로 모듈별 매퍼와 서비스 그리고 뷰를 나눠 변경 영향 범위를 최소화했습니다.</li>
+          <li>명시적 컴포넌트 스캔만 허용하고 RootConfig와 WebMvcConfig에 등록해 의도된 빈만 살아 있도록 했습니다.</li>
+          <li>AOP 트랜잭션 정책은 <code>select*</code> 읽기전용으로 책임을 명확히 하고 그 외에는 PROPAGATION_REQUIRED를 적용했습니다.</li>
+          <li>세션 인증 JOBMOA_LOGIN_DATA에 6시간 타임아웃을 두어 위탁 운영 보안 가이드를 충족했습니다.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Project 2 : NESS -->
+    <article class="project" id="proj-ness">
+      <header class="project__head">
+        <div>
+          <span class="project__index">P2</span>
+          <h3 class="project__title">NESS — 국민취업지원제도 자가진단 챗봇</h3>
+          <p class="project__sub">Next.js 16 · React 19 · Gemini · SQLite — 도메인 결정트리 + 대화형 UI</p>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="https://github.com/no1fc/NESS_chatBot" target="_blank" rel="noopener">GitHub ↗</a>
+      </header>
+
+      <div class="project__meta">
+        <span><b>조직</b> (주)잡모아</span>
+        <span><b>역할</b> 백엔드 · 도메인 규칙 설계</span>
+      </div>
+
+      <div class="project__stack">
+        <span>Next.js 16 (App Router)</span><span>React 19</span><span>TypeScript</span>
+        <span>Tailwind CSS 4</span><span>Framer Motion</span>
+        <span>Google Gemini</span><span>SQLite (better-sqlite3)</span>
+        <span>JWT / bcrypt</span><span>Ubuntu · Nginx · PM2</span>
+      </div>
+
+      <p class="project__desc">
+        법령상 자격 요건(소득과 재산 그리고 연령과 구직이력)을 결정 트리로 도메인 모델링하고
+        Gemini 대화형 인터페이스로 풀어 일반 사용자가 답하는 동안 자동으로 자격을 판별합니다.
+      </p>
+
+      <div class="project__diagram">
+        <h4 class="project__diagram-title">📐 진단 흐름</h4>
+        <pre class="mermaid">
+flowchart TB
+  U[사용자] --> CH[채팅 UI]
+  CH --> NRR{Next.js Route Handler}
+  NRR --> DT[Decision Tree<br/>자격 규칙 도메인 모델]
+  NRR --> GA[Gemini API<br/>자연어 응답 생성]
+  DT --> RES{유형 판별}
+  RES -->|I 유형| OUT1[취업 지원 + 수당]
+  RES -->|II 유형| OUT2[취업 지원]
+  RES -->|비대상| OUT3[대안 안내]
+  NRR --> DB[(SQLite · 지점·계정·프롬프트)]
+  ADM[관리자 대시보드] --> DB
+  ADM -. bcrypt JWT .- DB
+        </pre>
+      </div>
+
+      <div class="project__highlights">
+        <h4>주요 성과</h4>
+        <ul>
+          <li>법령 자격 요건을 결정 트리 도메인 모델로 구조화</li>
+          <li>대화형 UI로 진입 장벽 완화 → 운영 부서 1차 상담 부담 경감</li>
+          <li>관리자 대시보드: 지점·계정(bcrypt)·Gemini API 키·프롬프트 실시간 업데이트</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Project 3 : chatJobmoa -->
+    <article class="project" id="proj-chatjobmoa">
+      <header class="project__head">
+        <div>
+          <span class="project__index">P3</span>
+          <h3 class="project__title">chatJobmoa v2.0 — AI 채용공고 자동 생성</h3>
+          <p class="project__sub">NestJS · TypeScript(Strict) · Prisma · Gemini — 사내 첫 LLM 자동화 사례</p>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="https://github.com/no1fc/chatJobmoa-version-2.0" target="_blank" rel="noopener">GitHub ↗</a>
+      </header>
+
+      <div class="project__meta">
+        <span><b>조직</b> (주)잡모아</span>
+        <span><b>역할</b> AI 통합 백엔드</span>
+      </div>
+
+      <div class="project__stack">
+        <span>NestJS</span><span>TypeScript Strict</span><span>Prisma ORM</span>
+        <span>Google Gemini API</span><span>Multer</span><span>@nestjs/schedule (Cron)</span>
+        <span>JWT</span>
+      </div>
+
+      <p class="project__desc">
+        채용공고 1건 평균 30분의 반복 작성 병목을 LLM 자동화로 해소했습니다.
+        Gemini 초안 생성에 후처리 파이프라인을 두어 형식과 용어 그리고 금지어를 검증하도록 설계했습니다.
+      </p>
+
+      <div class="project__diagram">
+        <h4 class="project__diagram-title">📐 AI 생성 파이프라인</h4>
+        <pre class="mermaid">
+flowchart LR
+  IN["기업·직무·자격 입력"] --> NEST["NestJS Controller"]
+  NEST --> AISVC["AI Generation Service"]
+  AISVC -- "Prompt" --> Gem["Gemini API"]
+  Gem --> Draft["Draft 응답"]
+  Draft --> POST["후처리 Pipeline<br/>형식·용어·금지어 검증"]
+  POST -- "OK" --> HTML["HTML 채용공고<br/>Tailwind 기반"]
+  POST -- "이미지" --> IMG["포스터·배너 이미지"]
+  POST -- "Reject" --> RETRY["재요청 / 사람 검수"]
+  HTML --> DB[("Prisma DB")]
+  IMG --> FS[("uploads/")]
+  CRON["nestjs/schedule Cron"] --> AISVC
+        </pre>
+      </div>
+
+      <div class="project__highlights">
+        <h4>대표 엔드포인트</h4>
+        <ul class="endpoints">
+          <li><span class="http http--post">POST</span> <code>/ai/recommend/keywords</code> 직종과 직무 기반 키워드 추천</li>
+          <li><span class="http http--post">POST</span> <code>/generate/:id/html</code> Tailwind HTML 채용공고 생성</li>
+          <li><span class="http http--post">POST</span> <code>/generate/:id/images</code> 포스터와 배너 이미지 생성</li>
+          <li><span class="http http--get">GET</span> <code>/benefits</code> 중소기업 혜택 조회 (SmeBenefit)</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Project 4 : kr-resume-skill -->
+    <article class="project" id="proj-kr-resume">
+      <header class="project__head">
+        <div>
+          <span class="project__index">P4</span>
+          <h3 class="project__title">kr-resume-skill — Claude Skill 기반 자기소개서·포트폴리오 생성기 (오픈소스)</h3>
+          <p class="project__sub">Python · ReportLab · python-pptx · Claude Code Skills</p>
+        </div>
+        <a class="btn btn--ghost btn--sm" href="https://github.com/no1fc/kr-resume-skill" target="_blank" rel="noopener">GitHub ↗</a>
+      </header>
+
+      <div class="project__meta">
+        <span>조직 — 개인 사이드 프로젝트 (사내 공유)</span>
+        <span>역할 — 기획·개발 100%</span>
+      </div>
+
+      <div class="project__stack">
+        <span>Python</span><span>ReportLab</span><span>python-pptx</span>
+        <span>Pillow</span><span>lxml</span><span>Claude Code Skills</span>
+      </div>
+
+      <p class="project__desc">
+        한국 취업 시장 형식에 맞춘 자기소개서와 포트폴리오 자동 생성 Claude Code Skill입니다.
+        대화형 정보 수집과 STAR 기법 적용 그리고 글자수 자동 조정을 거쳐
+        ATS 호환 자기소개서 PDF와 Canva 스타일 포트폴리오 PPTX 출력까지 파이프라인화했습니다.
+      </p>
+
+      <div class="project__highlights">
+        <h4>주요 산출</h4>
+        <ul>
+          <li>Claude Code Skill로 패키징해 누구나 재사용 가능한 도구로 배포했습니다.</li>
+          <li>자기소개서 PDF와 포트폴리오 PPTX 템플릿 3종(공공·대기업, IT·스타트업, 디자인·크리에이티브)을 제공합니다.</li>
+          <li>한글 텍스트 선택이 가능한 PDF를 ReportLab과 한글 폰트 자동 등록 파이프라인으로 직접 구현했습니다.</li>
+          <li>1인 개발자로 일하는 잡모아 사내에도 공유해 동료들의 취업 서류 작성을 도왔습니다.</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ─── TROUBLESHOOTING ─────────────────────────────── -->
+<section id="troubleshooting" class="section section--alt">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__kicker">04 · Troubleshooting</span>
+      <h2 class="section__title">두 건의 트러블슈팅 — 외부 의존성과 다중 인스턴스</h2>
+      <p class="section__lead">트랜잭션 경계만으로는 잡히지 않는 문제를 책임 계층(락과 캐시 그리고 외부 의존성)으로 분리해서 해결한 사례입니다.</p>
+    </div>
+
+    <!-- Trouble 1 -->
+    <article class="trouble">
+      <header class="trouble__head">
+        <span class="trouble__index">T1</span>
+        <h3 class="trouble__title">Gemini AI 직무 추천 — 동시성 이슈</h3>
+        <span class="trouble__tag">단독 해결</span>
+      </header>
+
+      <div class="trouble__grid">
+        <div class="trouble__col trouble__col--problem">
+          <h4>🔍 문제 (Problem)</h4>
+          <p>다수 상담사가 동일 참여자에 대해 동시에 'AI 직무 추천' 버튼을 클릭하면 다음과 같은 일이 벌어졌습니다.</p>
+          <ul>
+            <li>Gemini API가 N번 중복 호출되어 비용과 지연이 누적되었습니다.</li>
+            <li>응답 시점에 따라 서로 다른 추천 결과가 DB에 덮어써졌습니다 (race condition).</li>
+            <li>트랜잭션 경계만으로는 외부 API 호출 비용을 막을 수 없었습니다.</li>
+          </ul>
+        </div>
+
+        <div class="trouble__col trouble__col--analysis">
+          <h4>🧪 원인 분석 (Investigation)</h4>
+          <ul>
+            <li>재현 스크립트로 동일 <code>participantId</code>에 3개 동시 요청을 보내자 항상 3건의 Gemini 호출과 race가 확인되었습니다.</li>
+            <li><code>ParticipantJobRecommendServiceImpl</code>이 매 호출마다 새 컨텍스트로 Gemini를 호출해 중복 제거 계층이 부재한 상태였습니다.</li>
+            <li>락과 캐시 그리고 외부 의존성의 책임을 분리해야 풀 수 있는 지점이었습니다.</li>
+          </ul>
+        </div>
+
+        <div class="trouble__col trouble__col--solution">
+          <h4>🛠 해결 (Solution)</h4>
+          <pre class="code"><code>// 핵심 아이디어
+class RecommendConcurrencyManager {
+  // participantId → 진행 중인 CompletableFuture
+  ConcurrentHashMap&lt;Long, CompletableFuture&lt;Result&gt;&gt; inflight;
+
+  CompletableFuture&lt;Result&gt; runOrJoin(Long pid, Supplier&lt;Result&gt; task) {
+    return inflight.computeIfAbsent(pid,
+      k -&gt; CompletableFuture.supplyAsync(task)
+            .whenComplete((r, e) -&gt; inflight.remove(k)));
+  }
+}</code></pre>
+          <ul>
+            <li><code>participantId</code>를 키로 진행 중인 <code>CompletableFuture</code>를 공유합니다.</li>
+            <li>후속 요청은 새 호출 없이 같은 Future를 반환받습니다.</li>
+            <li>완료나 예외 시 자동 정리로 누수를 차단합니다.</li>
+            <li><code>ParticipantJobRecommendServiceImpl</code> 진입부에 결합한 얇은 게이트로 동작합니다.</li>
+          </ul>
+        </div>
+
+        <div class="trouble__col trouble__col--result">
+          <h4>✅ 결과 (Result)</h4>
+          <ul class="results">
+            <li><span class="result-num">100<small>%</small></span><span>동일 참여자 Gemini 중복 호출 차단</span></li>
+            <li><span class="result-num">↓</span><span>외부 AI API 호출 비용과 응답 지연 감소</span></li>
+            <li><span class="result-num">✓</span><span>동일 참여자 추천 결과 일관성 보장</span></li>
+          </ul>
+          <p class="trouble__lesson">
+            Lesson. 외부 의존성 호출의 비용과 일관성은 트랜잭션 경계 밖에서 별도 계층으로 다뤄야 합니다.
+            AOP와 락 그리고 캐시 중 어디에 책임을 둘지를 분리해서 보는 습관을 얻었습니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="project__diagram">
+        <h4 class="project__diagram-title">📐 동시성 제어 흐름</h4>
+        <pre class="mermaid">
+sequenceDiagram
+  autonumber
+  participant C1 as 상담사 A
+  participant C2 as 상담사 B
+  participant SVC as RecommendService
+  participant CMG as ConcurrencyManager<br/>(participantId key)
+  participant Gem as Gemini API
+  participant DB as MSSQL
+
+  C1->>SVC: recommend(participantId=42)
+  SVC->>CMG: runOrJoin(42, task)
+  CMG->>Gem: call once (only first)
+  C2->>SVC: recommend(participantId=42)
+  SVC->>CMG: runOrJoin(42, task)
+  CMG-->>C2: join existing Future
+  Gem-->>CMG: result
+  CMG->>DB: save (single write)
+  CMG-->>C1: same result
+  CMG-->>C2: same result
+        </pre>
+      </div>
+    </article>
+
+    <!-- Trouble 2 -->
+    <article class="trouble">
+      <header class="trouble__head">
+        <span class="trouble__index">T2</span>
+        <h3 class="trouble__title">WebSocket 실시간 알림 — 폴링 부하 + 다중 인스턴스</h3>
+        <span class="trouble__tag">주요 기여</span>
+      </header>
+
+      <div class="trouble__grid">
+        <div class="trouble__col trouble__col--problem">
+          <h4>🔍 문제 (Problem)</h4>
+          <ul>
+            <li>상담사 화면이 1분 폴링과 수동 새로고침에 의존했습니다.</li>
+            <li>동시 접속자가 증가하면 DB 부하가 비례해 늘었습니다.</li>
+            <li>다중 WAS 환경에서 한 노드의 알림이 다른 노드 사용자에게 전달되지 않았습니다.</li>
+          </ul>
+        </div>
+
+        <div class="trouble__col trouble__col--analysis">
+          <h4>🧪 원인 분석 (Investigation)</h4>
+          <ul>
+            <li>폴링 간격을 줄이는 임시방편은 곧 부하 폭증으로 이어졌습니다.</li>
+            <li>단일 STOMP <code>simple broker</code>만으로는 인스턴스 간 메시지가 격리되었습니다.</li>
+            <li>노드 안 브로커와 노드 간 pub/sub을 분리하는 구조가 적합하다고 판단했습니다.</li>
+          </ul>
+        </div>
+
+        <div class="trouble__col trouble__col--solution">
+          <h4>🛠 해결 (Solution)</h4>
+          <ul>
+            <li><code>/ws-notification</code> STOMP/SockJS 엔드포인트를 신규 구축했습니다.</li>
+            <li><code>/topic</code> 구독과 <code>/app</code> 발신 prefix로 알림 종류를 분리해 확장성을 확보했습니다.</li>
+            <li>Redis pub/sub 어댑터를 STOMP 브로커 앞단에 두어 다중 인스턴스를 동기화했습니다.</li>
+            <li>기존 폴링 로직을 제거하고 이벤트 기반 push로 전환했습니다.</li>
+          </ul>
+        </div>
+
+        <div class="trouble__col trouble__col--result">
+          <h4>✅ 결과 (Result)</h4>
+          <ul class="results">
+            <li><span class="result-num">↓↓</span><span>폴링 제거로 DB 조회 부하 큰 폭 감소</span></li>
+            <li><span class="result-num">⇄</span><span>다중 WAS 인스턴스 알림 동기화 달성</span></li>
+            <li><span class="result-num">+</span><span>알림 종류 추가가 코드 수정 없이 가능</span></li>
+          </ul>
+          <p class="trouble__lesson">
+            Lesson. 실시간성과 확장성은 한 노드의 브로커와 노드 간 pub/sub을 분리해서 설계해야 안정적입니다.
+            STOMP destination 네이밍을 도메인 단위로 잡아두니 후속 알림 추가가 비용 없이 흘러갔습니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="project__diagram">
+        <h4 class="project__diagram-title">📐 다중 인스턴스 알림 동기화</h4>
+        <pre class="mermaid">
+flowchart LR
+  Producer[Domain Event<br/>참여자 배정·일정 변경] --> N1[WAS Node 1]
+  Producer --> N2[WAS Node 2]
+  N1 -- publish --> RPS[(Redis pub/sub<br/>channel: notify)]
+  N2 -- publish --> RPS
+  RPS -- subscribe --> N1
+  RPS -- subscribe --> N2
+  N1 --> S1[STOMP /topic/...]
+  N2 --> S2[STOMP /topic/...]
+  S1 --> U1[상담사 A · Node1 접속]
+  S2 --> U2[상담사 B · Node2 접속]
+
+  classDef node fill:#EFF6FF,stroke:#2563EB
+  class N1,N2 node
+        </pre>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE / TIMELINE ───────────────────────── -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section__head">
+      <span class="section__kicker">05 · Experience</span>
+      <h2 class="section__title">Career Timeline</h2>
+    </div>
+
+    <ol class="timeline">
+      <li class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__body">
+          <header>
+            <h3>(주)잡모아 — 풀스택 개발자</h3>
+            <span class="timeline__period">현재 재직 중</span>
+          </header>
+          <p class="timeline__domain">고용노동부 국민취업지원제도 위탁 운영 시스템</p>
+          <ul>
+            <li>[Backend] Spring Boot와 Java 17 그리고 MyBatis와 MSSQL 기반 운영 시스템을 직접 개발하고 운영합니다.</li>
+            <li>[Backend] 세 도메인 모듈을 분리 설계하고 AOP 트랜잭션 정책을 수립했습니다.</li>
+            <li>[Backend] Gemini AI 직무 추천의 동시성 이슈를 단독으로 해결했습니다.</li>
+            <li>[Backend] STOMP/SockJS WebSocket과 Redis pub/sub을 결합해 실시간 알림을 구축했습니다.</li>
+            <li>[Frontend] Next.js 16과 React 19 그리고 Tailwind 기반 NESS 챗봇 UI와 관리자 대시보드를 직접 구현했습니다.</li>
+            <li>[Frontend] 잡모아 운영 시스템 JSP 화면 신규 개발과 유지보수를 담당하며 사용자 워크플로우를 개선했습니다.</li>
+            <li>[Mobile] Flutter 기반 사내 장비관리 앱을 단독으로 설계하고 개발했습니다.</li>
+            <li>[AI] 사내 첫 LLM 기반 업무 자동화 사례 chatJobmoa의 백엔드와 생성 결과 화면까지 정착시켰습니다.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot timeline__dot--secondary"></div>
+        <div class="timeline__body">
+          <header>
+            <h3>정보처리산업기사 — 한국산업인력공단</h3>
+            <span class="timeline__period">국가기술자격</span>
+          </header>
+          <p>정보처리 분야 국가기술자격 취득</p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot timeline__dot--secondary"></div>
+        <div class="timeline__body">
+          <header>
+            <h3>학점은행제 — 컴퓨터공학 계열</h3>
+            <span class="timeline__period">진행 중 (현업 병행)</span>
+          </header>
+          <p>이론 보강 — 자료구조와 알고리즘 그리고 데이터베이스와 네트워크</p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot timeline__dot--secondary"></div>
+        <div class="timeline__body">
+          <header>
+            <h3>국민내일배움카드 — 웹 프로그래밍 훈련 과정</h3>
+            <span class="timeline__period">수료</span>
+          </header>
+          <p>HTML/CSS/JS와 Java 그리고 Spring과 DB 기초부터 프로젝트까지 정규 훈련 (work24 등록 과정)</p>
+        </div>
+      </li>
+
+      <li class="timeline__item">
+        <div class="timeline__dot timeline__dot--secondary"></div>
+        <div class="timeline__body">
+          <header>
+            <h3>특성화고등학교 · 스마트소프트웨어과</h3>
+            <span class="timeline__period">졸업</span>
+          </header>
+          <p>프로그래밍 기초 학습 — 개발자의 출발선</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────────────────── -->
+<section id="contact" class="section section--cta">
+  <div class="container contact">
+    <h2 class="section__title contact__title">함께 좋은 시스템을 만들고 싶습니다.</h2>
+    <p class="contact__lead">헬스케어 백엔드, AI 통합, 운영 안정성에 관한 어떤 얘기든 환영합니다.</p>
+    <div class="contact__links">
+      <a class="btn btn--primary" href="mailto:no1fc2000@gmail.com">📧 no1fc2000@gmail.com</a>
+      <a class="btn btn--ghost" href="https://github.com/no1fc" target="_blank" rel="noopener">💻 github.com/no1fc</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© 2026 남상도 · Backend Developer Portfolio</span>
+    <span>Built with HTML · CSS · Mermaid.js — designed to live on GitHub Pages</span>
+  </div>
+</footer>
+
+<!-- Mermaid for architecture diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#EFF6FF',
+      primaryTextColor: '#0F172A',
+      primaryBorderColor: '#2563EB',
+      lineColor: '#475569',
+      fontFamily: '"Inter", "Noto Sans KR", system-ui, sans-serif',
+    },
+    flowchart: { curve: 'basis', htmlLabels: true },
+    sequence: { useMaxWidth: true }
+  });
+</script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

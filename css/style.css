@@ -188,7 +188,7 @@ code, pre { font-family: var(--font-mono); }
 .hero__lead {
   font-size: clamp(1rem, 1.4vw, 1.1rem);
   color: var(--c-muted);
-  max-width: 720px;
+  max-width: 820px;
   margin: 0 0 28px;
 }
 .hero__lead strong { color: var(--c-fg); }

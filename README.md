@@ -12,7 +12,7 @@
 
 1. **About** — 운영을 책임지는 풀스택 / 클라이언트 영향까지 보는 백엔드 / 트러블슈팅 / AI 만드는 개발자
 2. **Skills** — Backend · Frontend · Mobile · Datastore · Realtime · AI · Secondary · Infra
-3. **Projects** — ParticipantManagement / NESS / chatJobmoa / kr-resume-skill (각 프로젝트마다 Mermaid 아키텍처 다이어그램 포함)
+3. **Projects** — ParticipantManagement / NESS / chatJobmoa / kr-resume-skill / COMA(팀) (각 프로젝트마다 Mermaid 아키텍처 다이어그램 포함)
 4. **Troubleshooting** — Gemini 동시성 · WebSocket 폴링 두 건 (Problem · Investigation · Solution · Result · Lesson 4분면)
 5. **Experience** — Career Timeline (잡모아 풀스택 + 정보처리산업기사 + 학점은행제 + 훈련과정 + 특성화고)
 6. **Contact**

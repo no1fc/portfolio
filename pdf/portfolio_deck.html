@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>남상도 포트폴리오</title>
+<style>
+  :root {
+    --ink: #1a1d24;
+    --sub: #5b6270;
+    --line: #dfe3ea;
+    --bg: #ffffff;
+    --soft: #f4f6f9;
+    --accent: #e8452c;
+    --accent-soft: #fdece8;
+    --ok: #1f8a5b;
+    --ok-soft: #e5f4ec;
+    --gap: #b26a00;
+    --gap-soft: #fff3df;
+    --code: #0f172a;
+  }
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; font-size: 11.5pt; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 297mm; height: 210mm; padding: 15mm 18mm 13mm; position: relative; page-break-after: always; overflow: hidden; display: flex; flex-direction: column; }
+  .page:last-child { page-break-after: auto; }
+  .eyebrow { font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h1 { font-size: 30pt; margin: 4mm 0 2mm; line-height: 1.2; }
+  h2 { font-size: 19pt; margin: 1.5mm 0 5mm; line-height: 1.3; }
+  h3 { font-size: 12.5pt; margin: 0 0 2mm; }
+  p { margin: 0 0 2.5mm; }
+  .sub { color: var(--sub); }
+  .foot { position: absolute; left: 18mm; right: 18mm; bottom: 7mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: var(--sub); border-top: 1px solid var(--line); padding-top: 2mm; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+  .card { border: 1px solid var(--line); border-radius: 3mm; padding: 4.5mm 5mm; background: var(--bg); }
+  .card.soft { background: var(--soft); border-color: transparent; }
+  .tag { display: inline-block; font-size: 8.5pt; padding: .4mm 2.2mm; border-radius: 10mm; background: var(--soft); color: var(--sub); margin: 0 1mm 1mm 0; font-weight: 500; }
+  .tag.a { background: var(--accent-soft); color: var(--accent); }
+  ul { margin: 0; padding-left: 4.5mm; }
+  li { margin-bottom: 1.2mm; }
+  .kpi { font-size: 22pt; font-weight: 800; color: var(--accent); line-height: 1.1; }
+  .kpi-l { font-size: 9pt; color: var(--sub); }
+  table { width: 100%; border-collapse: collapse; font-size: 9.6pt; }
+  th, td { text-align: left; vertical-align: top; padding: 2mm 2.5mm; border-bottom: 1px solid var(--line); }
+  th { font-size: 8.8pt; color: var(--sub); font-weight: 700; background: var(--soft); }
+  .st { display: inline-block; font-size: 8.3pt; font-weight: 700; padding: .3mm 2mm; border-radius: 1.5mm; white-space: nowrap; }
+  .st.ok { background: var(--ok-soft); color: var(--ok); }
+  .st.part { background: var(--accent-soft); color: var(--accent); }
+  .st.gap { background: var(--gap-soft); color: var(--gap); }
+  pre { background: var(--code); color: #e2e8f0; border-radius: 2.5mm; padding: 4mm 5mm; font-family: 'Consolas', 'D2Coding', monospace; font-size: 9pt; line-height: 1.5; margin: 0; white-space: pre; }
+  pre .c { color: #94a3b8; }
+  pre .k { color: #f9a8d4; }
+  /* flow diagrams */
+  .flow { display: flex; align-items: stretch; gap: 0; }
+  .node { flex: 1; border: 1.5px solid var(--ink); border-radius: 2.5mm; padding: 2.5mm 2mm; text-align: center; font-size: 9pt; font-weight: 600; background: var(--bg); display: flex; flex-direction: column; justify-content: center; }
+  .node small { display: block; font-weight: 400; color: var(--sub); font-size: 8pt; }
+  .node.hl { border-color: var(--accent); background: var(--accent-soft); }
+  .arrow { width: 7mm; display: flex; align-items: center; justify-content: center; color: var(--sub); font-size: 12pt; }
+  .lane { display: grid; grid-template-columns: 28mm 1fr; gap: 3mm; align-items: center; margin-bottom: 2.5mm; }
+  .lane .lbl { font-size: 8.5pt; color: var(--sub); font-weight: 700; text-align: right; }
+  .timeline { position: relative; padding-left: 6mm; border-left: 2px solid var(--line); }
+  .tl { position: relative; margin-bottom: 3.2mm; }
+  .tl::before { content: ''; position: absolute; left: -8.2mm; top: 1.6mm; width: 3.2mm; height: 3.2mm; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .tl .when { font-size: 8.5pt; color: var(--sub); }
+  .tl b { font-size: 10.5pt; }
+  .step { display: grid; grid-template-columns: 17mm 1fr; gap: 3mm; margin-bottom: 2.6mm; }
+  .step .s { font-size: 8.5pt; font-weight: 800; color: var(--accent); letter-spacing: .05em; padding-top: .4mm; }
+  .lesson { border-left: 3px solid var(--accent); padding: 2mm 4mm; background: var(--accent-soft); border-radius: 0 2mm 2mm 0; font-size: 10pt; }
+  .cover { justify-content: space-between; }
+  .cover .band { position: absolute; left: 0; top: 0; bottom: 0; width: 8mm; background: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- 1. COVER -->
+<section class="page cover">
+  <div class="band"></div>
+  <div style="padding-left:6mm">
+    <div class="eyebrow">Portfolio · Full-stack Developer · Backend 지원</div>
+    <h1>운영 중인 서비스를<br>백엔드부터 화면까지<br>혼자 끝까지 만드는 개발자 남상도입니다.</h1>
+    <p class="sub" style="font-size:12.5pt; max-width:205mm">고용노동부 국민취업지원제도 위탁 운영 시스템을 Java·Spring Boot·MyBatis·MSSQL로 <b>1인 개발</b>하고 직접 운영하고 있습니다. Spring Boot 백엔드와 Next.js·JSP 화면, Flutter 사내 앱까지 직접 만들고, 운영 중 드러난 동시성·실시간성 문제를 원인 계층부터 해결해 왔습니다.</p>
+  </div>
+  <div style="padding-left:6mm; display:flex; gap:12mm; align-items:flex-end">
+    <div>
+      <div class="kpi">100%</div><div class="kpi-l">동일 참여자 Gemini API<br>중복 호출 차단</div>
+    </div>
+    <div>
+      <div class="kpi">1분 → 0</div><div class="kpi-l">상담사 알림 폴링 제거<br>(WebSocket + Redis pub/sub)</div>
+    </div>
+    <div>
+      <div class="kpi">30분</div><div class="kpi-l">채용공고 1건 평균 반복 작성<br>업무를 LLM으로 자동화</div>
+    </div>
+    <div style="margin-left:auto; text-align:right; font-size:10pt; line-height:1.7">
+      <b style="font-size:13pt">남상도</b><br>
+      010-4301-7553 · no1fc2000@gmail.com<br>
+      github.com/no1fc · no1fc.github.io/portfolio
+    </div>
+  </div>
+</section>
+
+<!-- 3. PROFILE -->
+<section class="page">
+  <div class="eyebrow">01 · 경력과 기술</div>
+  <h2>데이터 업무 3년 5개월, 개발 실무 약 2년</h2>
+  <div class="grid2" style="grid-template-columns: 1.05fr 1fr">
+    <div>
+      <div class="timeline">
+        <div class="tl"><div class="when">2024.12 - 현재</div><b>(주)잡모아 · 책임 / 풀스택 개발자</b><br><span class="sub">국민취업지원제도 위탁 운영 시스템 1인 개발·운영. 백엔드, JSP·Next.js 화면, Flutter 사내 앱, LLM 자동화</span></div>
+        <div class="tl"><div class="when">2025.02 - 현재</div><b>숭실평생교육원 · 소프트웨어학 학사 (학점은행제)</b><br><span class="sub">현업 병행. 자료구조, 알고리즘, 데이터베이스, 네트워크</span></div>
+        <div class="tl"><div class="when">2024.05 - 2024.12</div><b>코리아IT아카데미 · 풀스택 개발자 양성 과정B 수료</b><br><span class="sub">Java, Spring, DB, HTML/CSS/JS</span></div>
+        <div class="tl"><div class="when">2022.08 - 2024.05</div><b>공군 현역 · 병장 만기전역</b></div>
+        <div class="tl"><div class="when">2019.03 - 2022.08</div><b>(주)잡모아 · 주임 / 데이터·업무자동화</b><br><span class="sub">엑셀 업무 자동화, 업무 데이터·DB 관리</span></div>
+        <div class="tl"><div class="when">2018.09</div><b>정보처리산업기사 취득</b> <span class="sub">(고교 재학 중)</span></div>
+        <div class="tl" style="margin-bottom:0"><div class="when">2019</div><b>상일미디어고등학교 스마트소프트웨어과 졸업</b></div>
+      </div>
+    </div>
+    <div>
+      <div class="card soft" style="margin-bottom:4mm">
+        <h3>주력 (실무 운영)</h3>
+        <span class="tag a">Java 17</span><span class="tag a">Spring Boot 3.4</span><span class="tag a">Spring MVC / AOP</span><span class="tag a">MyBatis</span><span class="tag a">MSSQL (T-SQL)</span><span class="tag a">Redis</span><span class="tag a">WebSocket (STOMP/SockJS)</span><span class="tag a">REST API</span><span class="tag a">Maven (WAR)</span>
+      </div>
+      <div class="card soft" style="margin-bottom:4mm">
+        <h3>실무 사용</h3>
+        <span class="tag">JSP / jQuery</span><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">NestJS</span><span class="tag">Prisma</span><span class="tag">Flutter</span><span class="tag">SQLite</span><span class="tag">Ubuntu / Nginx / PM2</span><span class="tag">Git / GitHub</span>
+      </div>
+      <div class="card soft">
+        <h3>외부 연동 · AI</h3>
+        <span class="tag">고용24(WORK24) API</span><span class="tag">Kakao Map API</span><span class="tag">Google Gemini API</span><span class="tag">Claude API</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">MCP / Claude Code Skills</span>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>남상도 · Portfolio</span><span>2</span></div>
+</section>
+
+<!-- 4. PROJECT 1 ARCHITECTURE -->
+<section class="page">
+  <div class="eyebrow">02 · 대표 프로젝트</div>
+  <h2>국민취업지원제도 참여자 관리 시스템 <span class="sub" style="font-size:12pt; font-weight:500">· 1인 개발·운영</span></h2>
+  <p class="sub" style="margin-top:-3mm">상담사와 관리자가 구직 참여자의 상담 → 직업훈련 → 알선 → 취업 전 과정을 관리하는 고용노동부 위탁 운영 시스템입니다. 참여자 한 명의 상태가 길게 이어지고, 여러 상담사가 같은 데이터를 동시에 다룹니다.</p>
+  <div class="card" style="margin:2mm 0 5mm">
+    <div class="lane"><div class="lbl">요청 흐름</div>
+      <div class="flow">
+        <div class="node">Browser<small>세션 로그인</small></div><div class="arrow">→</div>
+        <div class="node">LoginInterceptor<small>세션 6시간</small></div><div class="arrow">→</div>
+        <div class="node">Controller</div><div class="arrow">→</div>
+        <div class="node hl">Service (*Impl)<small>AOP 트랜잭션</small></div><div class="arrow">→</div>
+        <div class="node">DAO</div><div class="arrow">→</div>
+        <div class="node">MyBatis XML<small>SQL 직접 작성</small></div><div class="arrow">→</div>
+        <div class="node">MSSQL</div>
+      </div>
+    </div>
+    <div class="lane" style="margin-bottom:0"><div class="lbl">도메인 모듈</div>
+      <div class="grid3">
+        <div class="node">CounselMain<small>상담·교육·취업·일지·AI 추천·일정</small></div>
+        <div class="node">jobPlacement<small>기업 알선, WebSocket 채팅, 이력서 요청</small></div>
+        <div class="node">recruitmentFormation<small>고용24 채용공고 수집·동기화</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="grid3">
+    <div class="card soft"><h3>모듈 분리</h3><p style="font-size:10pt">세 도메인마다 매퍼·서비스·뷰를 나눠 변경 영향 범위를 줄였습니다. 컴포넌트 스캔도 명시 등록만 허용해 의도한 빈만 뜨게 했습니다.</p></div>
+    <div class="card soft"><h3>트랜잭션 정책</h3><p style="font-size:10pt">AOP 포인트컷으로 <code>select*</code> 메서드는 읽기 전용, 나머지는 <code>PROPAGATION_REQUIRED</code>. 트랜잭션 경계를 코드마다 흩어 놓지 않고 한 곳에서 관리합니다.</p></div>
+    <div class="card soft"><h3>SQL과 보안</h3><p style="font-size:10pt">SQL은 MyBatis XML 매퍼에만 작성하고 값 바인딩은 <code>#{}</code>만 사용해 SQL injection을 막습니다. 자격증명은 <code>.env</code>와 환경변수로 분리했습니다.</p></div>
+  </div>
+  <p class="sub" style="margin-top:4mm; font-size:9.5pt">스택: Spring Boot 3.4.1 · Java 17 · MyBatis 3.5.6 · MSSQL · Redis(Jedis) · Spring WebSocket · Google Gemini · Apache POI · AdminLTE 4 / jQuery · Maven WAR</p>
+  <div class="foot"><span>남상도 · Portfolio</span><span>3</span></div>
+</section>
+
+<!-- 5. TROUBLESHOOTING 1 -->
+<section class="page">
+  <div class="eyebrow">03 · 트러블슈팅 ① 데이터 정합성</div>
+  <h2>동시 요청으로 외부 API가 중복 호출되고 결과가 덮어써지던 문제</h2>
+  <div class="grid2" style="grid-template-columns: 1.1fr 1fr">
+    <div>
+      <div class="step"><div class="s">문제</div><div>여러 상담사가 같은 참여자에 대해 동시에 'AI 직무 추천'을 누르면 Gemini API가 N번 중복 호출되어 비용과 지연이 쌓였고, 응답 순서에 따라 서로 다른 추천 결과가 DB에 덮어써졌습니다(race condition).</div></div>
+      <div class="step"><div class="s">원인 분석</div><div>같은 participantId로 동시 요청 3건을 보내는 재현 스크립트를 만들어 매번 3건의 호출과 race가 일어나는 것을 확인했습니다. 서비스가 호출마다 새로 Gemini를 부르고 있었고, 중복을 걸러 낼 계층이 없었습니다. 트랜잭션 경계로는 외부 API 호출 자체를 막을 수 없었습니다.</div></div>
+      <div class="step"><div class="s">해결</div><div>participantId를 키로 진행 중인 <code>CompletableFuture</code>를 공유하는 <code>RecommendConcurrencyManager</code>를 서비스 진입부에 얇은 게이트로 붙였습니다. 뒤따르는 요청은 새로 호출하지 않고 같은 Future를 받고, 완료나 예외가 나면 자동으로 정리됩니다.</div></div>
+      <div class="step"><div class="s">결과</div><div><b>동일 참여자 중복 호출 100% 차단</b>, 외부 API 비용과 지연 감소, 추천 결과 일관성 보장.</div></div>
+      <div class="lesson">외부 의존성 호출의 비용과 일관성은 트랜잭션 경계 밖에서 별도 계층으로 다뤄야 한다는 것을 배웠습니다. AOP와 락, 캐시 중 어디에 책임을 둘지 분리해서 보는 습관을 얻었습니다.</div>
+    </div>
+    <div>
+<pre><span class="c">// 핵심 아이디어</span>
+<span class="k">class</span> RecommendConcurrencyManager {
+  <span class="c">// participantId → 진행 중인 요청</span>
+  ConcurrentHashMap&lt;Long, CompletableFuture&lt;Result&gt;&gt; inflight;
+
+  CompletableFuture&lt;Result&gt; runOrJoin(Long pid,
+                                       Supplier&lt;Result&gt; task) {
+    <span class="k">return</span> inflight.computeIfAbsent(pid,
+      k -&gt; CompletableFuture.supplyAsync(task)
+            .whenComplete((r, e) -&gt; inflight.remove(k)));
+  }
+}</pre>
+      <div class="card" style="margin-top:4mm; font-size:9.3pt">
+        <div class="flow" style="margin-bottom:2mm"><div class="node">상담사 A<small>recommend(42)</small></div><div class="arrow">→</div><div class="node hl">runOrJoin(42)<small>첫 요청만 호출</small></div><div class="arrow">→</div><div class="node">Gemini API<small>1회</small></div></div>
+        <div class="flow"><div class="node">상담사 B<small>recommend(42)</small></div><div class="arrow">→</div><div class="node hl">runOrJoin(42)<small>기존 Future 합류</small></div><div class="arrow">→</div><div class="node">같은 결과<small>DB 1회 저장</small></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>남상도 · Portfolio</span><span>4</span></div>
+</section>
+
+<!-- 6. TROUBLESHOOTING 2 -->
+<section class="page">
+  <div class="eyebrow">04 · 트러블슈팅 ② Redis 활용과 운영 부하</div>
+  <h2>1분 폴링을 없애고 다중 WAS 알림을 Redis pub/sub으로 동기화</h2>
+  <div class="grid2">
+    <div>
+      <div class="step"><div class="s">문제</div><div>상담사 화면이 1분 폴링과 수동 새로고침에 의존해 동시 접속자가 늘수록 DB 부하가 비례해 늘었고, 다중 WAS 환경에서는 한 노드의 알림이 다른 노드 사용자에게 전달되지 않았습니다.</div></div>
+      <div class="step"><div class="s">원인 분석</div><div>폴링 간격을 줄이는 임시방편은 곧 부하 폭증으로 이어집니다. 단일 STOMP simple broker만으로는 인스턴스 사이 메시지가 격리되므로, 노드 안 브로커와 노드 간 pub/sub을 분리하는 구조가 맞다고 판단했습니다.</div></div>
+      <div class="step"><div class="s">해결</div><div><code>/ws-notification</code> STOMP/SockJS 엔드포인트를 새로 만들고 <code>/topic</code>·<code>/app</code> prefix로 알림 종류를 나눴습니다. 노드 간 동기화는 Redis pub/sub 채널로 처리하고 기존 폴링 로직을 제거해 이벤트 기반 push로 바꿨습니다.</div></div>
+      <div class="step"><div class="s">결과</div><div><b>폴링 제거로 DB 조회 부하 감소</b>, 다중 WAS 인스턴스 알림 동기화, 이후 알림 종류를 추가할 때 코드 수정이 거의 필요 없는 구조.</div></div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="flow" style="margin-bottom:3mm"><div class="node">도메인 이벤트<small>참여자 배정·일정 변경</small></div></div>
+        <div class="flow" style="margin-bottom:3mm"><div class="node">WAS Node 1</div><div class="arrow">⇄</div><div class="node hl">Redis pub/sub<small>channel: notify</small></div><div class="arrow">⇄</div><div class="node">WAS Node 2</div></div>
+        <div class="flow" style="margin-bottom:3mm"><div class="node">STOMP /topic/...</div><div class="arrow"></div><div class="node" style="border:none; background:none"></div><div class="arrow"></div><div class="node">STOMP /topic/...</div></div>
+        <div class="flow"><div class="node">상담사 A<small>Node 1 접속</small></div><div class="arrow"></div><div class="node" style="border:none; background:none"></div><div class="arrow"></div><div class="node">상담사 B<small>Node 2 접속</small></div></div>
+      </div>
+      <div class="lesson" style="margin-top:4mm">Redis는 조회 캐시(Jedis)와 노드 간 메시지 전달 두 용도로 운영하고 있습니다. 실시간성과 확장성은 노드 안 브로커와 노드 간 pub/sub을 나눠 설계해야 안정적이라는 것을 배웠습니다.</div>
+    </div>
+  </div>
+  <div class="foot"><span>남상도 · Portfolio</span><span>5</span></div>
+</section>
+
+<!-- 7. OTHER PROJECTS -->
+<section class="page">
+  <div class="eyebrow">05 · 개발부터 배포까지</div>
+  <h2>외부 API 연동, 인증, 배포를 직접 해 본 서비스들</h2>
+  <div class="grid2">
+    <div class="card">
+      <span class="tag a">일반 사용자 대상 · 1인 개발</span>
+      <h3 style="margin-top:2mm">NESS · 국민취업지원제도 자가진단 챗봇</h3>
+      <p class="sub" style="font-size:9.5pt">Next.js 16 · React 19 · TypeScript · Google Gemini · SQLite · JWT/bcrypt · Ubuntu/Nginx/PM2</p>
+      <ul style="font-size:10pt">
+        <li>소득·재산·연령·구직이력 등 법령상 자격 요건을 <b>결정트리 도메인 모델</b>로 구조화하고, 사용자가 대화로 답하는 동안 자격 유형을 자동 판별</li>
+        <li>관리자 대시보드: 지점·계정(bcrypt), Gemini API 키, 프롬프트를 실시간 수정. JWT 인증</li>
+        <li>Ubuntu 서버에 Nginx·PM2로 직접 배포·운영</li>
+        <li>대화형 UI로 진입 장벽을 낮춰 운영 부서의 1차 상담 부담 경감</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="tag a">사내 첫 LLM 업무 자동화 · 1인 개발</span>
+      <h3 style="margin-top:2mm">chatJobmoa v2.0 · AI 채용공고 자동 생성</h3>
+      <p class="sub" style="font-size:9.5pt">NestJS · TypeScript(Strict) · Prisma ORM · Google Gemini · @nestjs/schedule · JWT</p>
+      <ul style="font-size:10pt">
+        <li>채용공고 1건 평균 <b>30분</b> 걸리던 반복 작성 업무를 자동화</li>
+        <li>Gemini 초안을 그대로 쓰지 않고 <b>형식·용어·금지어 검증 후처리 파이프라인</b>을 거치게 설계. 실패하면 재요청 또는 사람 검수</li>
+        <li>HTML 공고와 포스터·배너 이미지 생성 API, 직무 키워드 추천 API</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid3" style="margin-top:5mm">
+    <div class="card soft"><h3>고용24 연동</h3><p style="font-size:9.8pt">고용24(WORK24) 채용공고를 스케줄 기반으로 수집·동기화하는 모듈 운영</p></div>
+    <div class="card soft"><h3>Flutter 사내 앱</h3><p style="font-size:9.8pt">사내 장비관리 앱을 단독으로 설계·개발</p></div>
+    <div class="card soft"><h3>배포</h3><p style="font-size:9.8pt">운영 시스템은 Maven WAR 빌드, 신규 서비스는 Ubuntu·Nginx·PM2로 직접 배포</p></div>
+  </div>
+  <div class="foot"><span>남상도 · Portfolio</span><span>6</span></div>
+</section>
+
+<!-- 8. DOCS & SHARING -->
+<section class="page">
+  <div class="eyebrow">06 · 문서화와 기술 공유</div>
+  <h2>혼자 개발해도, 팀으로 개발해도 남는 기록을 만듭니다</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>운영 시스템 README · 구조 문서</h3>
+      <p style="font-size:10pt">참여자 관리 시스템 저장소에 다음 내용을 직접 정리했습니다.</p>
+      <ul style="font-size:10pt">
+        <li>3개 모듈의 역할과 대표 경로, 요청 흐름(Interceptor → Controller → Service → DAO → MyBatis → MSSQL)</li>
+        <li>기술 스택 표, 실행·빌드 방법, 필수 환경변수 목록</li>
+        <li>디렉터리 구조와 정적 리소스 버전 관리 규칙</li>
+        <li><b>절대 하지 말 것</b> 목록: MyBatis <code>${}</code> 금지, <code>@Transactional</code> 대신 AOP 정책, 시크릿 하드코딩 금지, 레거시 <code>.do</code> URL은 요청 없이 바꾸지 않기, 새 패키지 추가 시 스캔 등록 위치</li>
+      </ul>
+      <div class="card soft" style="margin-top:4mm">
+        <span class="tag a">팀 프로젝트 · 6인 · 2024.10 - 2024.11</span>
+        <h3 style="margin-top:2mm">COMA · 클라이밍 크루 커뮤니티 (국비 과정)</h3>
+        <p class="sub" style="font-size:9.3pt">Java · Spring MVC · MyBatis · JSP · Bootstrap 4 · GitHub(coma-team)</p>
+        <ul style="font-size:9.8pt">
+          <li>Controller·View 담당: 마이페이지, 암장, 게시판, 크루전, 예약관리</li>
+          <li>fork → Pull Request 방식으로 협업, <b>PR 25건 병합</b>(팀 내 최다)</li>
+          <li>마무리 단계에서 API 키 제거, import 정리, 패키지명 재정의 PR</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:4mm">
+        <h3>트러블슈팅 기록</h3>
+        <p style="font-size:10pt">운영 중 해결한 문제를 <b>문제 · 원인 분석 · 해결 · 결과 · 교훈</b> 형식으로 기록해 포트폴리오에 남겼습니다(이 문서 p.4, p.5).</p>
+      </div>
+      <div class="card" style="margin-bottom:4mm">
+        <h3>오픈소스 · kr-resume-skill</h3>
+        <p style="font-size:10pt">한국 취업 서류(자기소개서 PDF·포트폴리오 PPTX)를 자동 생성하는 Claude Code Skill. Python·ReportLab·python-pptx, 한글 텍스트 선택 가능 PDF, 템플릿 3종. 기획·개발 100%, GitHub 공개 후 사내 공유.</p>
+      </div>
+      <div class="card">
+        <h3>사내 AI 활용 교육</h3>
+        <p style="font-size:10pt">동료들이 AI를 실무에 쓸 수 있도록 사내 교육 세션을 직접 진행했습니다.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>남상도 · Portfolio</span><span>7</span></div>
+</section>
+
+<!-- CLOSING -->
+<section class="page cover">
+  <div class="band"></div>
+  <div style="padding-left:6mm">
+    <div class="eyebrow">Contact</div>
+    <h1>함께 좋은 시스템을<br>만들고 싶습니다.</h1>
+    <p class="sub" style="font-size:12.5pt; max-width:205mm">백엔드 설계, AI 통합, 운영 안정성에 관한 이야기라면 언제든 환영합니다.</p>
+  </div>
+  <div style="padding-left:6mm; font-size:12pt; line-height:1.9">
+    <b style="font-size:15pt">남상도</b><br>
+    010-4301-7553 · no1fc2000@gmail.com<br>
+    github.com/no1fc · no1fc.github.io/portfolio
+  </div>
+</section>
+
+</body>
+</html>

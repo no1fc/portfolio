@@ -747,4 +747,6 @@ code, pre { font-family: var(--font-mono); }
   .nav, .hero__bg, .section--cta, .footer { display: none; }
   body { background: #fff; }
   .project, .trouble { break-inside: avoid; box-shadow: none; }
+  /* main.js hides cards until scrolled into view; print never scrolls */
+  .about__card, .skill-group, .project, .trouble, .timeline__item { opacity: 1 !important; transform: none !important; }
 }

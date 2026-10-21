@@ -24,7 +24,8 @@ portfolio/
 ├── index.html         # 단일 페이지 포트폴리오
 ├── css/style.css      # 디자인 시스템 (CSS 변수 기반)
 ├── js/main.js         # 부드러운 스크롤·활성 섹션·진입 애니메이션
-└── 포트폴리오_남상도.pdf  # PPT를 PDF로 변환한 다운로드용 자료
+├── pdf/portfolio_deck.html  # 다운로드용 PDF의 원본 (A4 가로 슬라이드)
+└── 포트폴리오_남상도.pdf  # pdf/portfolio_deck.html을 Edge/Chrome으로 인쇄한 다운로드용 자료
 ```
 
 ## 🛠 기술 결정
